@@ -1,6 +1,3 @@
-Here’s an improved and cleaned-up version of your GitHub `README.md` file:
-
----
 
 # TodoApp
 
