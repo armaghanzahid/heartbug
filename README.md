@@ -1,27 +1,83 @@
+Here’s an improved and cleaned-up version of your GitHub `README.md` file:
+
+---
+
 # TodoApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
+A simple, user-friendly To-Do List web application built with **Angular**, **Tailwind CSS**, and **Firebase Firestore**. This app allows users to add, edit, delete, and mark tasks as completed, with persistent storage.
 
-## Development server
+## Table of Contents
+- [Development Server](#development-server)
+- [Description](#description)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Technology Stack](#technology-stack)
+- [Use Case](#use-case)
+- [What We Are Looking For](#what-we-are-looking-for)
+- [License](#license)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Development Server
 
-## Code scaffolding
+Run `ng serve` to start the development server. Navigate to `http://localhost:4200/`. The application will automatically reload if any source files are changed.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Description
 
-## Build
+This project is a simple To-Do list application that enables users to manage their tasks, including adding new tasks, editing existing ones, marking them as completed or pending, and deleting tasks.
+Tasks are persistently stored using **Firebase Firestore**. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+For demo purposes, I did not exclude environment variables for Firestore repository (not ignored in `.gitignore`).
 
-## Running unit tests
+## Deployment
+The app is deployed on Vercel and can be accessed live at:
+[HB-TodoApp on Vercel](https://heartbug-git-main-armaghanzahids-projects.vercel.app/home)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Features
 
-## Running end-to-end tests
+- View a list of tasks.
+- Add a new task with a description.
+- Edit the description of an existing task.
+- Mark a task as "Completed" or "Pending."
+- Delete tasks that are no longer needed.
+- Data is stored persistently in Firebase Firestore.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Requirements
 
-## Further help
+### User Interface:
+- The interface should be intuitive and user-friendly.
+- The application should allow users to:
+  - View a list of tasks.
+  - Add new tasks.
+  - Edit tasks.
+  - Mark tasks as "Completed" or "Pending."
+  - Delete tasks.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Functionality:
+- Each task should have:
+  - A description.
+  - A status (either "Pending" or "Completed").
+- Users should be able to change the task's status between "Completed" and "Pending."
+
+### Storage:
+- Tasks are stored persistently in **Firebase Firestore**.
+
+## Technology Stack
+
+- **Frontend**: Angular, Tailwind CSS
+- **Backend/Database**: Firebase Firestore
+- **Tools**: Angular CLI, Firebase SDK
+
+## Use Case
+
+1. A user opens the web app and sees a list of tasks.
+2. The user can add a new task by entering a description and clicking the "Add Task" button.
+3. The user can click on a task to edit the description or mark it as "Completed."
+4. The user can delete tasks that are no longer needed.
+5. The task list updates automatically after any action (add, edit, delete).
+
+## Goals
+
+- Clean and well-structured code.
+- A simple, intuitive user interface.
+- Persistent data handling using Firebase Firestore.
+- Proper state management and UI updates based on user actions.
+- Any additional features or creative touches are welcome but not required.
