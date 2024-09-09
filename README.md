@@ -10,8 +10,7 @@ A simple, user-friendly To-Do List web application built with **Angular**, **Tai
 - [Requirements](#requirements)
 - [Technology Stack](#technology-stack)
 - [Use Case](#use-case)
-- [What We Are Looking For](#what-we-are-looking-for)
-- [License](#license)
+- [Goals](#what-we-are-looking-for)
 
 ## Development Server
 
