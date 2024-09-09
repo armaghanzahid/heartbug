@@ -37,6 +37,18 @@ yarn-error.log
 testem.log
 /typings
 
+# environment files
+#.env
+# .env.local
+# .env*.local
+
 # System files
 .DS_Store
 Thumbs.db
+.vercel
+.env*.local
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json

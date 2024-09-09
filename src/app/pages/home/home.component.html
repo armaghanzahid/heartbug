@@ -1,0 +1,104 @@
+<div
+  class="block w-full max-w-screen-lg px-4 py-2 mx-auto text-white bg-slate-300 shadow-md rounded-lg lg:px-8 lg:py-6 mt-10"
+>
+  <div class="p-6 bg-white shadow-lg rounded-lg">
+    <app-spinner *ngIf="isLoading"></app-spinner>
+    <div *ngIf="!isLoading">
+      <div
+        class="flex justify-between items-center mb-4 border-b border-slate-200 pb-4"
+      >
+        <input
+          [(ngModel)]="newTaskDescription"
+          (keyup.enter)="addTask()"
+          placeholder="Enter a new task"
+          class="bg-slate-100 px-4 py-2 rounded-md text-gray-700 flex-grow"
+        />
+
+        <button
+          class="rounded-md bg-slate-800 py-2 px-4 text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 ml-2"
+          (click)="addTask()"
+          type="button"
+        >
+          Add task +
+        </button>
+      </div>
+
+      <div class="space-y-4">
+        <div
+          *ngFor="let task of tasks"
+          class="relative flex items-center justify-between bg-gray-100 p-2 rounded-lg shadow-sm hover:bg-gray-200 transition-all"
+        >
+          <div class="flex items-center gap-2 flex-grow">
+            <input
+              type="checkbox"
+              [(ngModel)]="task.completed"
+              (change)="updateTask(task)"
+              class="h-4 w-4 focus:ring-blue-500"
+            />
+            <div *ngIf="editingTaskId !== task.id" class="flex-grow">
+              <span
+                [class.line-through]="task.completed"
+                class="text-gray-800 cursor-pointer"
+                (click)="editMode(task)"
+              >
+                {{ task.description }}
+              </span>
+            </div>
+
+            <div *ngIf="editingTaskId === task.id" class="flex-grow">
+              <div class="w-full max-w-m min-w-[200px]">
+                <input
+                  #taskInput
+                  class="w-full bg-transparent placeholder:text-slate-400 text-gray-800 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                  placeholder="Type here..."
+                  [(ngModel)]="task.description"
+                />
+              </div>
+            </div>
+
+            <button
+              *ngIf="editingTaskId !== task.id"
+              (click)="deleteTask(task.id)"
+              class="p-2 text-gray-500 hover:text-red-600 transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <button
+              *ngIf="editingTaskId === task.id"
+              (click)="updateTaskDescription(task)"
+              class="p-2 text-gray-500 hover:text-red-600 transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
